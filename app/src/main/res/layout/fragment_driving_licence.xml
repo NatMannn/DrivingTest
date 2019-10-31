@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".DrivingLicence">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/settingButton"
+            android:layout_width="290dp"
+            android:layout_height="161dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="120dp"
+            android:background="@drawable/driving" />
+
+        <Button
+            android:id="@+id/testRankButton"
+            android:layout_width="150dp"
+            android:layout_height="83dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="220dp"
+            android:background="@drawable/testrank"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/examGuideButton"
+            android:layout_width="152dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/guide"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout></layout>

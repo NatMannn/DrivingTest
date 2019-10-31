@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Driving Test</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about">about</string>
+    <string name="about1">About</string>
+    <string name="detail">ทดสอบใบขับขี่</string>
+    <string name="textviewQue">TextView</string>
+    <string name="textviewAns">TextView</string>
+    <string name="goodjob">GoodJob!!!</string>
+    <string name="you_score">you score</string>
+    <string name="score_num">numm</string>
+    <string name="radiobutton1">RadioButton</string>
+    <string name="textview_Que">TextView</string>
+    <string name="radiobutton2">RadioButton</string>
+    <string name="radiobutton3">RadioButton</string>
+    <string name="radiobutton4">RadioButton</string>
+    <string name="share_text" />
+    <string name="share_hi">Hello!</string>
+</resources>

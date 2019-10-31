@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/drivingLicence">
+
+    <fragment
+        android:id="@+id/drivingLicence"
+        android:name="buu.informatics59160953.drivingtest.DrivingLicence"
+        android:label="สอบใบขับขี่"
+        tools:layout="@layout/fragment_driving_licence">
+        <action
+            android:id="@+id/action_drivingLicence_to_testRank"
+            app:destination="@id/testRank" />
+        <action
+            android:id="@+id/action_drivingLicence_to_examGuidelines"
+            app:destination="@id/examGuidelines" />
+    </fragment>
+    <fragment
+        android:id="@+id/testRank"
+        android:name="buu.informatics59160953.drivingtest.TestRank"
+        android:label="แบบทดสอบ"
+        tools:layout="@layout/fragment_test_rank">
+        <action
+            android:id="@+id/action_testRank_to_result"
+            app:destination="@id/result" />
+    </fragment>
+    <fragment
+        android:id="@+id/result"
+        android:name="buu.informatics59160953.drivingtest.Result"
+        android:label="ผลลัพธ์"
+        tools:layout="@layout/fragment_result">
+        <action
+            android:id="@+id/action_result_to_drivingLicence"
+            app:destination="@id/drivingLicence" />
+    </fragment>
+    <fragment
+        android:id="@+id/examGuidelines"
+        android:name="buu.informatics59160953.drivingtest.Screens.ExamGuidelines.ExamGuidelines"
+        android:label="แนวข้อสอบ"
+        tools:layout="@layout/fragment_exam_guidelines" />
+    <fragment
+        android:id="@+id/about"
+        android:name="buu.informatics59160953.drivingtest.About"
+        android:label="about"
+        tools:layout="@layout/fragment_about" />
+</navigation>

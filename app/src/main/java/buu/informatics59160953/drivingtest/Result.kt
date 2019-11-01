@@ -34,6 +34,8 @@ class Result : Fragment() {
         return binding.root
     }
 
+
+
     // Creating our Share Intent
     private fun getShareIntent() : Intent {
         val shareIntent = Intent(Intent.ACTION_SEND)

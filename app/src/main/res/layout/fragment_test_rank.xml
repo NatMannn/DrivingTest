@@ -4,6 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="game"
+            type="buu.informatics59160953.drivingtest.TestRank" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
@@ -34,46 +41,58 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="110dp"
             android:layout_marginTop="100dp"
-            android:text="@string/textview_Que" />
 
-        <RadioButton
-            android:id="@+id/firstAnsRadioButton"
+            android:text="@{game.currentQuestion.text}" />
+
+        <RadioGroup
+            android:id="@+id/questionRadioGroup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="40dp"
-            android:text="@string/radiobutton1" />
+            android:layout_height="362dp"
+            android:layout_marginBottom="200dp">
 
-        <RadioButton
-            android:id="@+id/secondAnsRadioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="15dp"
-            android:text="@string/radiobutton2" />
+            <RadioButton
+                android:id="@+id/firstAnsRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="40dp"
 
-        <RadioButton
-            android:id="@+id/thirdAnsRadioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="15dp"
-            android:text="@string/radiobutton3" />
+                android:checked="true"
+                android:text="@{game.answers[0]}" />
 
-        <RadioButton
-            android:id="@+id/fourthAnsRadioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="15dp"
-            android:text="@string/radiobutton4" />
+            <RadioButton
+                android:id="@+id/secondAnsRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="15dp"
+                android:text="@{game.answers[1]}" />
 
-        <Button
-            android:id="@+id/submitTestButton"
-            android:layout_width="114dp"
-            android:layout_height="66dp"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="80dp"
-            android:background="@drawable/send" />
+            <RadioButton
+                android:id="@+id/thirdAnsRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="15dp"
+                android:text="@{game.answers[2]}" />
+
+            <RadioButton
+                android:id="@+id/fourthAnsRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="15dp"
+                android:text="@{game.answers[3]}" />
+
+            <Button
+                android:id="@+id/submitTestButton"
+                android:layout_width="114dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/send" />
+
+        </RadioGroup>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout></layout>

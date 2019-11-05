@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_result_to_drivingLicence"
             app:destination="@id/drivingLicence" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/examGuidelines"

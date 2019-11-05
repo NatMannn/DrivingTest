@@ -32,7 +32,7 @@
             android:id="@+id/testRankButton"
             android:layout_width="150dp"
             android:layout_height="83dp"
-            android:layout_marginStart="140dp"
+            android:layout_marginStart="130dp"
             android:layout_marginTop="220dp"
             android:background="@drawable/testrank"
             android:textAlignment="center" />
@@ -41,7 +41,7 @@
             android:id="@+id/examGuideButton"
             android:layout_width="152dp"
             android:layout_height="80dp"
-            android:layout_marginStart="140dp"
+            android:layout_marginStart="130dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/guide"
             android:textAlignment="center" />

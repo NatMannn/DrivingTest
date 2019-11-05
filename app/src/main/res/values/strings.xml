@@ -5,12 +5,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about">about</string>
     <string name="about1">About</string>
-    <string name="detail">ทดสอบใบขับขี่</string>
+    <string name="detail">สอบใบขับขี่ Driving Test เป็นแอพสำหรับให้ความรู้ผู้ที่ต้องการจะสอบใบอนุญาตขับขี่</string>
     <string name="textviewQue">TextView</string>
     <string name="textviewAns">TextView</string>
     <string name="goodjob">GoodJob!!!</string>
     <string name="you_score">you score</string>
-    <string name="score_num">numm</string>
+    <string name="score_num">0</string>
     <string name="radiobutton1">RadioButton</string>
     <string name="textview_Que">TextView</string>
     <string name="radiobutton2">RadioButton</string>

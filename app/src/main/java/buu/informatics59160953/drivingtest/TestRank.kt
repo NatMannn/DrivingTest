@@ -28,31 +28,32 @@ class TestRank : Fragment() {
     // All questions must have four answers.  We'd want these to contain references to string
     // resources so we could internationalize. (Or better yet, don't define the questions in code...)
     private val questions: MutableList<Question> = mutableListOf(
-        Question(text = "What is Android Jetpack?",
-            answers = listOf("All of these", "Tools", "Documentation", "Libraries")),
-        Question(text = "What is the base class for layouts?",
-            answers = listOf("ViewGroup", "ViewSet", "ViewCollection", "ViewRoot")),
-        Question(text = "What layout do you use for complex screens?",
-            answers = listOf("ConstraintLayout", "GridLayout", "LinearLayout", "FrameLayout")),
-        Question(text = "What do you use to push structured data into a layout?",
-            answers = listOf("Data binding", "Data pushing", "Set text", "An OnClick method")),
-        Question(text = "What method do you use to inflate layouts in fragments?",
-            answers = listOf("onCreateView()", "onActivityCreated()", "onCreateLayout()", "onInflateLayout()")),
-        Question(text = "What's the build system for Android?",
-            answers = listOf("Gradle", "Graddle", "Grodle", "Groyle")),
-        Question(text = "Which class do you use to create a vector drawable?",
-            answers = listOf("VectorDrawable", "AndroidVectorDrawable", "DrawableVector", "AndroidVector")),
-        Question(text = "Which one of these is an Android navigation component?",
-            answers = listOf("NavController", "NavCentral", "NavMaster", "NavSwitcher")),
-        Question(text = "Which XML element lets you register an activity with the launcher activity?",
-            answers = listOf("intent-filter", "app-registry", "launcher-registry", "app-launcher")),
-        Question(text = "What do you use to mark a layout for data binding?",
-            answers = listOf("<layout>", "<binding>", "<data-binding>", "<dbinding>"))
+        Question(text = "รถต่อไปนี้ได้รับการยกเว้นไม่ต้องจดทะเบียน?",
+            answers = listOf("รถที่เจ้าของรถแจ้งการไม่ใช้รถ", "รถยนต์นำเข้า", "รถสามล้อส่วนบุคคล", "รถจักรยานยนต์นำมาใช้ในหมู่บ้าน")),
+        Question(text = "ข้อใดไม่ใช่การตรวจสอบน้ำมัน?",
+            answers = listOf("ดมกลิ่น", "สี", "ปริมาณ", "ความหนืด สิ่งเจือปน")),
+        Question(text = "แบตเตอรี่รถยนต์จะมีขนาดแรงดันไฟฟ้ากี่โวลท์?",
+            answers = listOf("12 โวลท์", "15 โวลท์", "24 โวลท์", "220 โวลท์")),
+        Question(text = "หากประสงค์จะย้ายรถ เจ้าของรถต้องแจ้งย้ายรถต่อนายทะเบียนภายในกี่วัน?",
+            answers = listOf("15 วัน", "30 วัน", "7 วัน", "60 วัน")),
+        Question(text = "น้ำที่ใช้เติมแบตเตอรี่ ควรใช้น้ำชนิดใด?",
+            answers = listOf("น้ำกลั่น", "น้ำฝน", "น้ำบาดาล", "น้ำสบู่")),
+        Question(text = "การถอดขั้วแบเตอรี่ ควรถอดขั้วใดก่อน?",
+            answers = listOf("ขั้วลบ", "ขั้นบวก", "ขั้วใดก่อนก็ได้", "ถอดขั้วบวกและขั้วลบพร้อมกัน")),
+        Question(text = "ถ้าเติมลมยางอ่อนเกกินไป จะมีผลอย่างไรกับยาง?",
+            answers = listOf("ทำให้ดอกยางทางด้านข้างทั้งสองสึกหรอ", "ทำให้กินน้ำมันน้อยลง", "การขับขี่จะแข็งกระด้าง", "ดอกยางตรงกลางจะสึกเร็วกว่าปกติ")),
+        Question(text = "สภาพท่อยางหม้อน้ำที่ยังใช้งานได้ดีต้องมีลักษณะอย่างไร?",
+            answers = listOf("บีบแล้วต้องมีความยืดหยุ่น", "บีบแล้วต้องแข็งกระด้าง", "มีรอยบวมที่ท่อยาง", "มีรอยฉีกขาด")),
+        Question(text = "รถที่ไม่เสียภาษีประจำปีภายในกำหนดจะต้องเสียเงินเพิ่มเท่าใด?",
+            answers = listOf("ร้อยละ 1 ต่อเดือน", "ร้อยละ 1 ต่อปี", "ร้อยละ 10 ต่อเดือน", "ร้อยละ 20 ต่อปี")),
+        Question(text = "รถจักรยานยนต์ที่มีอายุครบปีต้องนำไปตรวจสภาพรถก่อนเสียภาษีประจำปี?",
+            answers = listOf("5 ปี", "1 ปี", "3 ปี", "2 ปี"))
     )
 
     lateinit var currentQuestion: Question
     lateinit var answers: MutableList<String>
     private var questionIndex = 0
+    private var scoreTest = 0
     private val numQuestions = Math.min((questions.size + 1) / 2, 5)
 
 
@@ -86,6 +87,9 @@ class TestRank : Fragment() {
                 // answer matches, we have the correct answer.
                 if (answers[answerIndex] == currentQuestion.answers[0]) {
                     questionIndex++
+
+                    scoreTest++
+
                     // Advance to the next question
                     if (questionIndex < numQuestions) {
                         currentQuestion = questions[questionIndex]
@@ -94,12 +98,12 @@ class TestRank : Fragment() {
                     } else {
                         // We've won!  Navigate to the gameWonFragment.
                         view.findNavController()
-                            .navigate(R.id.action_testRank_to_result)
+                            .navigate(TestRankDirections.actionTestRankToResult(scoreTest))
                     }
                 } else {
                     // Game over! A wrong answer sends us to the gameOverFragment.
                     view.findNavController()
-                        .navigate(R.id.action_testRank_to_result)
+                        .navigate(TestRankDirections.actionTestRankToResult(scoreTest))
                 }
             }
         }

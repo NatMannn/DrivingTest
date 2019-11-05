@@ -4,6 +4,7 @@ package buu.informatics59160953.drivingtest
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -28,6 +29,9 @@ class Result : Fragment() {
         binding.mainButton.setOnClickListener{ view ->
             view.findNavController().navigate(R.id.action_result_to_drivingLicence)
         }
+
+        val args = ResultArgs.fromBundle(arguments!!)
+        binding.scoreText.text = args.score.toString()
 
         // Inflate the layout for this fragment
         setHasOptionsMenu(true)

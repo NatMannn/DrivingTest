@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_result.*
 /**
  * A simple [Fragment] subclass.
  */
-class Result : Fragment() {
+class ResultFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +30,7 @@ class Result : Fragment() {
             view.findNavController().navigate(R.id.action_result_to_drivingLicence)
         }
 
-        val args = ResultArgs.fromBundle(arguments!!)
+        val args = ResultFragmentArgs.fromBundle(arguments!!)
         binding.scoreText.text = args.score.toString()
 
         // Inflate the layout for this fragment

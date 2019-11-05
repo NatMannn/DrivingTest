@@ -17,7 +17,7 @@ import kotlin.math.log
 /**
  * A simple [Fragment] subclass.
  */
-class DrivingLicence : Fragment() {
+class DrivingLicenceFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

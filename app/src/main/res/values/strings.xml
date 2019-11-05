@@ -19,4 +19,6 @@
     <string name="share_text" />
     <string name="share_hi">Hello!</string>
     <string name="title_android_question">แบบทดสอบ (%1$d/%2$d)</string>
+    <string name="textrecy">TextView</string>
+    <string name="textrecy2">TextView</string>
 </resources>

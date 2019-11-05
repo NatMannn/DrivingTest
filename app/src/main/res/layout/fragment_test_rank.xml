@@ -8,7 +8,7 @@
 
         <variable
             name="game"
-            type="buu.informatics59160953.drivingtest.TestRank" />
+            type="buu.informatics59160953.drivingtest.TestRankFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +16,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".TestRank">
+    tools:context=".TestRankFragment">
 
         <LinearLayout
             android:layout_width="match_parent"

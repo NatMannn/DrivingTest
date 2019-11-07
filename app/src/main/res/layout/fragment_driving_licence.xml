@@ -22,26 +22,26 @@
 
         <TextView
             android:id="@+id/settingButton"
-            android:layout_width="290dp"
+            android:layout_width="325dp"
             android:layout_height="161dp"
-            android:layout_marginStart="70dp"
+            android:layout_marginStart="50dp"
             android:layout_marginEnd="120dp"
             android:background="@drawable/driving" />
 
         <Button
             android:id="@+id/testRankButton"
-            android:layout_width="150dp"
+            android:layout_width="166dp"
             android:layout_height="83dp"
-            android:layout_marginStart="130dp"
+            android:layout_marginStart="120dp"
             android:layout_marginTop="220dp"
             android:background="@drawable/testrank"
             android:textAlignment="center" />
 
         <Button
             android:id="@+id/examGuideButton"
-            android:layout_width="152dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="130dp"
+            android:layout_width="168dp"
+            android:layout_height="84dp"
+            android:layout_marginStart="120dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/guide"
             android:textAlignment="center" />

@@ -22,9 +22,7 @@ class TestRankFragment : Fragment() {
         val text: String,
         val answers: List<String>)
 
-    // The first answer is the correct one.  We randomize the answers before showing the text.
-    // All questions must have four answers.  We'd want these to contain references to string
-    // resources so we could internationalize. (Or better yet, don't define the questions in code...)
+
     private val questions: MutableList<Question> = mutableListOf(
         Question(
             text = "รถต่อไปนี้ได้รับการยกเว้นไม่ต้องจดทะเบียน?",
@@ -52,11 +50,11 @@ class TestRankFragment : Fragment() {
             answers = listOf("น้ำกลั่น", "น้ำฝน", "น้ำบาดาล", "น้ำสบู่")
         ),
         Question(
-            text = "การถอดขั้วแบเตอรี่ ควรถอดขั้วใดก่อน?",
+            text = "การถอดขั้วแบบเตอรี่ ควรถอดขั้วใดก่อน?",
             answers = listOf("ขั้วลบ", "ขั้นบวก", "ขั้วใดก่อนก็ได้", "ถอดขั้วบวกและขั้วลบพร้อมกัน")
         ),
         Question(
-            text = "ถ้าเติมลมยางอ่อนเกกินไป จะมีผลอย่างไรกับยาง?",
+            text = "ถ้าเติมลมยางอ่อนเกินไป จะมีผลอย่างไรกับยาง?",
             answers = listOf(
                 "ทำให้ดอกยางทางด้านข้างทั้งสองสึกหรอ",
                 "ทำให้กินน้ำมันน้อยลง",
@@ -102,19 +100,18 @@ class TestRankFragment : Fragment() {
 
         val binding = DataBindingUtil.inflate<FragmentTestRankBinding>(inflater,
             R.layout.fragment_test_rank,container,false)
-        // Inflate the layout for this fragment
+
 
 
         randomizeQuestions()
 
-        // Bind this fragment class to the layout
         binding.game = this
 
-        // Set the onClickListener for the submitButton
+
         binding.submitTestButton.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
         { view: View ->
             val checkedId = binding.questionRadioGroup.checkedRadioButtonId
-            // Do nothing if nothing is checked (id == -1)
+
             if (-1 != checkedId) {
                 var answerIndex = 0
                 when (checkedId) {
@@ -122,20 +119,19 @@ class TestRankFragment : Fragment() {
                     R.id.thirdAnsRadioButton -> answerIndex = 2
                     R.id.fourthAnsRadioButton -> answerIndex = 3
                 }
-                // The first answer in the original question is always the correct one, so if our
-                // answer matches, we have the correct answer.
+
                 if (answers[answerIndex] == currentQuestion.answers[0]) {
                     questionIndex++
 
                     scoreTest++
 
-                    // Advance to the next question
+
                     if (questionIndex < numQuestions) {
                         currentQuestion = questions[questionIndex]
                         setQuestion()
                         binding.invalidateAll()
                     } else {
-                        // We've won!  Navigate to the gameWonFragment.
+
                         view.findNavController()
                             .navigate(
                                 TestRankFragmentDirections.actionTestRankToResult(
@@ -144,7 +140,8 @@ class TestRankFragment : Fragment() {
                             )
                     }
                 } else {
-                    // Game over! A wrong answer sends us to the gameOverFragment.
+                    var snackbar = view?.let { Snackbar.make(it,"จบแบบทดสอบ",Snackbar.LENGTH_LONG) }
+                    snackbar?.show()
                     view.findNavController()
                         .navigate(
                             TestRankFragmentDirections.actionTestRankToResult(
@@ -170,13 +167,10 @@ class TestRankFragment : Fragment() {
         setQuestion()
     }
 
-    // Sets the question and randomizes the answers.  This only changes the data, not the UI.
-    // Calling invalidateAll on the FragmentGameBinding updates the data.
+
     private fun setQuestion() {
         currentQuestion = questions[questionIndex]
-        // randomize the answers into a copy of the array
         answers = currentQuestion.answers.toMutableList()
-        // and shuffle them
         answers.shuffle()
       (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_question, questionIndex + 1, numQuestions)
     }

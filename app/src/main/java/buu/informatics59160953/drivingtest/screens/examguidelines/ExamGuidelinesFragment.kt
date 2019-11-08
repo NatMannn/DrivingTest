@@ -28,6 +28,7 @@ class ExamGuidelinesFragment : Fragment() {
 
         val adapter = ExamGuidelinesAdapter()
         adapter.replaceItems(viewModel.items)
+
         binding.recyclerview.adapter = adapter
 
         return binding.root
